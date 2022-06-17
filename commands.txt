@@ -137,6 +137,26 @@ df					//disk usage info and file system info
 df -h					//human readable
 df foldername				//info on specific path
 
+history					//get your history of commands
+!50					//run the command number 50 in your history
+hostory | less				//pipe history to less
+history | grep 'something'		//find "something" in your history
+
+ps 					//inspect user processes
+ps ax					//all processes
+ps axww					//word wrap
+ps axww | grep 'something'		//find 'something' process
+
+top					//display processes(most cpu)
+shift+m in top sort by memory
+
+kill -l					//list different kill signals
+15 = SIGTERM (most gentle)
+9 = SIGKILL (most aggressive)
+kill <pi>				//kills that process with SIGTERM
+kill -SIGKILL <pi>			//kills with kill
+kill -9 <pi>				//kills with kill
+
 
 
 chmod (u,g,o,a) (+,-,=) (r,w,x) file.sh 
