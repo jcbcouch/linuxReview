@@ -1,0 +1,2 @@
+cat /etc/shells		//list of shells
+which bash		//location of bash

@@ -71,6 +71,7 @@ date >> date.txt			//appends to a file
 cat file.txt				//print the contents of the file
 cat file1.txt file2.txt			//print the contents of files combined
 cat -n file.txt				//print with line numbers
+cat > file.txt				//type something into file, crtl+d to exit
 
 less file.txt				//opens the file in a reader in the terminal
 up and down arrow keys to move
