@@ -1,0 +1,176 @@
+pwd
+whoami
+man
+clear   //crtl+l
+clear -x
+
+sudo su  //get root
+
+
+ls
+ls /bin  //absolute path
+ls ../   //relative path
+ls -l    //list details
+ls -a    //list everything
+ls -l -a
+ls -la
+ls -lt   //last modified file first order
+ls -ltr  //last modified file first order reversed
+
+cd
+cd /bin   //absolute path
+cd ../    //relative path
+cd ~      // /home/jcbcouch
+
+mkdir
+mkdir foldername
+mkdir folder1 folder2
+mkdir /home/jcbcouch/foldername   	//absolute path
+mkdir ../foldername               	//relative path
+mkdir -p parent/child/subfolder   	//make nested folders
+
+touch /home/jcbcouch/filename.txt       //absolute
+touch ../filename.txt			//relative
+touch file1.txt file2.txt		//multiple files
+
+rmdir   		//only removes empty folders
+rmdir ../foldername
+rmdir /home/jcbcouch/foldername
+rmdir folder1 folder2
+
+rm
+rm filename.txt
+rm file1.txt file2.txt
+rm ../filename.txt
+rm /home/jcbcouch/filename.txt
+rm -v filename.txt   			//gives feedback
+rm -r /foldername    			//delete the folder and its contents
+rm -ri /foldername   			//promps you to delete the contents
+
+mv file.txt newname.txt   		//rename the file
+mv -v file.txt newname.txt		//-v gives feedback
+mv file.txt ../file.txt			//move to new location
+mv file1.txt file2.txt ../		//move multiple files
+mv folder FOLDER			//rename a folder
+mv folder ../				//move a folder and its contents
+
+cp file.txt copyfile.txt		//copy a file with new name in same location
+cp file.txt ../copyfile.txt		//copy to new loaction with new name
+cp file.txt ../				//copy to new location with same name
+cp -r folder ../			//copy folder and its contents to new location
+
+head file.txt				//print the first 10 lines
+head -n 20 file.txt			//print the first 20 lines
+tail file.txt				//print the last 10 lines
+tail -n 20 file.txt			//print the last 20 lines
+
+date					//print the date and time
+date > date.txt				//overrides if the file exists, creates the file if it doesnt
+date >> date.txt			//appends to a file
+
+cat file.txt				//print the contents of the file
+cat file1.txt file2.txt			//print the contents of files combined
+cat -n file.txt				//print with line numbers
+
+less file.txt				//opens the file in a reader in the terminal
+up and down arrow keys to move
+space to page down
+b to page up
+g to start of file
+G to end of file
+
+echo "something"			//prints "something"
+
+wc file.txt				//print number of lines, number of words, number of bytes
+wc -l file.txt				//number of lines
+wc -w file.txt				//number of words	
+ls -la | wc				//pipe the list of files to word count
+
+sort file.txt				//sort the output of the txt by line alphabetically 
+sort -f file.txt			//ignore case
+sort -n file.txt			//sort numerically
+sort -r file.txt			//reverse the sort order
+sort -u file.txt			//removes duplicate lines, unique only
+
+uniq file.txt				//remove adjacent duplicate lines
+sort file.txt | uniq			//sort and then remove adjacent duplicate lines(removes all duplicates)
+sort file.txt | uniq -d 		//only show the lines that have duplicates
+sort file.txt | uniq -u			//only show the lines that dont have duplicates
+sort file.txt | uniq -c			//give a count for the duplicates
+sort file.txt | uniq -c | sort -n       //order by count of number of duplicates
+
+echo *					//print every path in the current directory
+echo *.txt				//print everything that ends in .txt
+echo *.??				//print all files with 2 character file extensions
+ls -l *.txt				//list details for files ending in .txt
+rm *.txt				//remove all txt files
+echo {a,b,c}.txt			//a.txt b.txt c.txt
+touch {a,b,c}.txt
+echo {1..6}				//1,2,3,4,5,6
+
+diff file1.txt file2.txt		//gives you the differences between the files
+diff -y file1.txt file2.txt		//show you the differences
+diff -u file1.txt file2.txt		//additional details about differences
+
+find . -name '*7*'			//find all files in pwd(recursively) with 7 in name	
+find . -type d				//find all directories
+find . -type f				//find all files
+find . -iname 'something'		//case insensitive
+find . -name 'something -type f
+find . -name 'e*' or -name 'f*'         //names that start with e or f
+find . -type f -size +100k
+find . -type f -exec ls -l {} \;	//ls all files it found 
+
+grep whattofind file.txt		//find the matches in that file
+grep -n whattofind file.txt		//gives the line numbers
+grep -nC 2 whattofind file.txt		//context, gives 2 lines b4 and 2 after
+grep -r "something" . 			//find "something" recursively in current directory
+grep -ri "something" .			//case insensitive
+
+du .					//disk usage, amount of data in each folder
+du -m .					//megabytes
+du -g .					//gigabytes
+du -h .					//human readable size
+du -h . | sort -h			//human readable sort
+
+df					//disk usage info and file system info
+df -h					//human readable
+df foldername				//info on specific path
+
+
+
+chmod (u,g,o,a) (+,-,=) (r,w,x) file.sh 
+chmod u=rw,og=r file.sh  //user can read/write, other/group can read
+chmod a+x file.sh	 //execute for everyone added
+chmod +x file.sh	 //execute for everyone added
+chmod a-r file.sh	 //read removed for everyone
+    0: (000) No permission.
+    1: (001) Execute permission.
+    2: (010) Write permission.
+    3: (011) Write and execute permissions.
+    4: (100) Read permission.
+    5: (101) Read and execute permissions.
+    6: (110) Read and write permissions.
+    7: (111) Read, write, and execute permissions.
+
+chown username filename   //change the owner of the file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
